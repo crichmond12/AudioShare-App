@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		296FA94B2BF960D9000CF0C2 /* Audio_ShareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA94A2BF960D9000CF0C2 /* Audio_ShareApp.swift */; };
+		296FA94D2BF960D9000CF0C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA94C2BF960D9000CF0C2 /* ContentView.swift */; };
+		296FA94F2BF960DA000CF0C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296FA94E2BF960DA000CF0C2 /* Assets.xcassets */; };
+		296FA9522BF960DA000CF0C2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296FA9512BF960DA000CF0C2 /* Preview Assets.xcassets */; };
+		296FA95C2BF960DA000CF0C2 /* Audio_ShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA95B2BF960DA000CF0C2 /* Audio_ShareTests.swift */; };
+		296FA9662BF960DA000CF0C2 /* Audio_ShareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA9652BF960DA000CF0C2 /* Audio_ShareUITests.swift */; };
+		296FA9682BF960DA000CF0C2 /* Audio_ShareUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA9672BF960DA000CF0C2 /* Audio_ShareUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		296FA9582BF960DA000CF0C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 296FA93F2BF960D9000CF0C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 296FA9462BF960D9000CF0C2;
+			remoteInfo = "Audio Share";
+		};
+		296FA9622BF960DA000CF0C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 296FA93F2BF960D9000CF0C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 296FA9462BF960D9000CF0C2;
+			remoteInfo = "Audio Share";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		296FA9472BF960D9000CF0C2 /* Audio Share.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Audio Share.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		296FA94A2BF960D9000CF0C2 /* Audio_ShareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio_ShareApp.swift; sourceTree = "<group>"; };
+		296FA94C2BF960D9000CF0C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		296FA94E2BF960DA000CF0C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		296FA9512BF960DA000CF0C2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		296FA9572BF960DA000CF0C2 /* Audio ShareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Audio ShareTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		296FA95B2BF960DA000CF0C2 /* Audio_ShareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio_ShareTests.swift; sourceTree = "<group>"; };
+		296FA9612BF960DA000CF0C2 /* Audio ShareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Audio ShareUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		296FA9652BF960DA000CF0C2 /* Audio_ShareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio_ShareUITests.swift; sourceTree = "<group>"; };
+		296FA9672BF960DA000CF0C2 /* Audio_ShareUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio_ShareUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		296FA9442BF960D9000CF0C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		296FA9542BF960DA000CF0C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		296FA95E2BF960DA000CF0C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		296FA93E2BF960D9000CF0C2 = {
+			isa = PBXGroup;
+			children = (
+				296FA9492BF960D9000CF0C2 /* Audio Share */,
+				296FA95A2BF960DA000CF0C2 /* Audio ShareTests */,
+				296FA9642BF960DA000CF0C2 /* Audio ShareUITests */,
+				296FA9482BF960D9000CF0C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		296FA9482BF960D9000CF0C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				296FA9472BF960D9000CF0C2 /* Audio Share.app */,
+				296FA9572BF960DA000CF0C2 /* Audio ShareTests.xctest */,
+				296FA9612BF960DA000CF0C2 /* Audio ShareUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		296FA9492BF960D9000CF0C2 /* Audio Share */ = {
+			isa = PBXGroup;
+			children = (
+				296FA94A2BF960D9000CF0C2 /* Audio_ShareApp.swift */,
+				296FA94C2BF960D9000CF0C2 /* ContentView.swift */,
+				296FA94E2BF960DA000CF0C2 /* Assets.xcassets */,
+				296FA9502BF960DA000CF0C2 /* Preview Content */,
+			);
+			path = "Audio Share";
+			sourceTree = "<group>";
+		};
+		296FA9502BF960DA000CF0C2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				296FA9512BF960DA000CF0C2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		296FA95A2BF960DA000CF0C2 /* Audio ShareTests */ = {
+			isa = PBXGroup;
+			children = (
+				296FA95B2BF960DA000CF0C2 /* Audio_ShareTests.swift */,
+			);
+			path = "Audio ShareTests";
+			sourceTree = "<group>";
+		};
+		296FA9642BF960DA000CF0C2 /* Audio ShareUITests */ = {
+			isa = PBXGroup;
+			children = (
+				296FA9652BF960DA000CF0C2 /* Audio_ShareUITests.swift */,
+				296FA9672BF960DA000CF0C2 /* Audio_ShareUITestsLaunchTests.swift */,
+			);
+			path = "Audio ShareUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		296FA9462BF960D9000CF0C2 /* Audio Share */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 296FA96B2BF960DA000CF0C2 /* Build configuration list for PBXNativeTarget "Audio Share" */;
+			buildPhases = (
+				296FA9432BF960D9000CF0C2 /* Sources */,
+				296FA9442BF960D9000CF0C2 /* Frameworks */,
+				296FA9452BF960D9000CF0C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Audio Share";
+			productName = "Audio Share";
+			productReference = 296FA9472BF960D9000CF0C2 /* Audio Share.app */;
+			productType = "com.apple.product-type.application";
+		};
+		296FA9562BF960DA000CF0C2 /* Audio ShareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 296FA96E2BF960DA000CF0C2 /* Build configuration list for PBXNativeTarget "Audio ShareTests" */;
+			buildPhases = (
+				296FA9532BF960DA000CF0C2 /* Sources */,
+				296FA9542BF960DA000CF0C2 /* Frameworks */,
+				296FA9552BF960DA000CF0C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				296FA9592BF960DA000CF0C2 /* PBXTargetDependency */,
+			);
+			name = "Audio ShareTests";
+			productName = "Audio ShareTests";
+			productReference = 296FA9572BF960DA000CF0C2 /* Audio ShareTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		296FA9602BF960DA000CF0C2 /* Audio ShareUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 296FA9712BF960DA000CF0C2 /* Build configuration list for PBXNativeTarget "Audio ShareUITests" */;
+			buildPhases = (
+				296FA95D2BF960DA000CF0C2 /* Sources */,
+				296FA95E2BF960DA000CF0C2 /* Frameworks */,
+				296FA95F2BF960DA000CF0C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				296FA9632BF960DA000CF0C2 /* PBXTargetDependency */,
+			);
+			name = "Audio ShareUITests";
+			productName = "Audio ShareUITests";
+			productReference = 296FA9612BF960DA000CF0C2 /* Audio ShareUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		296FA93F2BF960D9000CF0C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					296FA9462BF960D9000CF0C2 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					296FA9562BF960DA000CF0C2 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 296FA9462BF960D9000CF0C2;
+					};
+					296FA9602BF960DA000CF0C2 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 296FA9462BF960D9000CF0C2;
+					};
+				};
+			};
+			buildConfigurationList = 296FA9422BF960D9000CF0C2 /* Build configuration list for PBXProject "Audio Share" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 296FA93E2BF960D9000CF0C2;
+			productRefGroup = 296FA9482BF960D9000CF0C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				296FA9462BF960D9000CF0C2 /* Audio Share */,
+				296FA9562BF960DA000CF0C2 /* Audio ShareTests */,
+				296FA9602BF960DA000CF0C2 /* Audio ShareUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		296FA9452BF960D9000CF0C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				296FA9522BF960DA000CF0C2 /* Preview Assets.xcassets in Resources */,
+				296FA94F2BF960DA000CF0C2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		296FA9552BF960DA000CF0C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		296FA95F2BF960DA000CF0C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		296FA9432BF960D9000CF0C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				296FA94D2BF960D9000CF0C2 /* ContentView.swift in Sources */,
+				296FA94B2BF960D9000CF0C2 /* Audio_ShareApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		296FA9532BF960DA000CF0C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				296FA95C2BF960DA000CF0C2 /* Audio_ShareTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		296FA95D2BF960DA000CF0C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				296FA9662BF960DA000CF0C2 /* Audio_ShareUITests.swift in Sources */,
+				296FA9682BF960DA000CF0C2 /* Audio_ShareUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		296FA9592BF960DA000CF0C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 296FA9462BF960D9000CF0C2 /* Audio Share */;
+			targetProxy = 296FA9582BF960DA000CF0C2 /* PBXContainerItemProxy */;
+		};
+		296FA9632BF960DA000CF0C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 296FA9462BF960D9000CF0C2 /* Audio Share */;
+			targetProxy = 296FA9622BF960DA000CF0C2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		296FA9692BF960DA000CF0C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		296FA96A2BF960DA000CF0C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		296FA96C2BF960DA000CF0C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Audio Share/Preview Content\"";
+				DEVELOPMENT_TEAM = 9P82L824DU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fgh.Audio-Share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		296FA96D2BF960DA000CF0C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Audio Share/Preview Content\"";
+				DEVELOPMENT_TEAM = 9P82L824DU;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fgh.Audio-Share";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		296FA96F2BF960DA000CF0C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9P82L824DU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fgh.Audio-ShareTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Audio Share.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Audio Share";
+			};
+			name = Debug;
+		};
+		296FA9702BF960DA000CF0C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9P82L824DU;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fgh.Audio-ShareTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Audio Share.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Audio Share";
+			};
+			name = Release;
+		};
+		296FA9722BF960DA000CF0C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9P82L824DU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fgh.Audio-ShareUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Audio Share";
+			};
+			name = Debug;
+		};
+		296FA9732BF960DA000CF0C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9P82L824DU;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fgh.Audio-ShareUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Audio Share";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		296FA9422BF960D9000CF0C2 /* Build configuration list for PBXProject "Audio Share" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				296FA9692BF960DA000CF0C2 /* Debug */,
+				296FA96A2BF960DA000CF0C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		296FA96B2BF960DA000CF0C2 /* Build configuration list for PBXNativeTarget "Audio Share" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				296FA96C2BF960DA000CF0C2 /* Debug */,
+				296FA96D2BF960DA000CF0C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		296FA96E2BF960DA000CF0C2 /* Build configuration list for PBXNativeTarget "Audio ShareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				296FA96F2BF960DA000CF0C2 /* Debug */,
+				296FA9702BF960DA000CF0C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		296FA9712BF960DA000CF0C2 /* Build configuration list for PBXNativeTarget "Audio ShareUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				296FA9722BF960DA000CF0C2 /* Debug */,
+				296FA9732BF960DA000CF0C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 296FA93F2BF960D9000CF0C2 /* Project object */;
+}
