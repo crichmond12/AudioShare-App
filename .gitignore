@@ -37,6 +37,12 @@ Pods/
 # macOS
 .DS_Store
 
+# Large media files — never commit these to git
+*.mov
+*.mp4
+*.avi
+*.mkv
+
 # Third-party SDKs — download manually from vendor
 # Spotify iOS SDK: https://developer.spotify.com/documentation/ios/
 SpotifyiOS.xcframework/
