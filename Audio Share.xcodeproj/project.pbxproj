@@ -3,10 +3,34 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		292C18882C0112BE00FF235B /* Audio Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18872C0112BE00FF235B /* Audio Engine.swift */; };
+		292C188D2C029D1900FF235B /* Keychain Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C188C2C029D1900FF235B /* Keychain Manager.swift */; };
+		292C188F2C03AAA000FF235B /* Color Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C188E2C03AAA000FF235B /* Color Extension.swift */; };
+		292C18912C03C96500FF235B /* Login Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18902C03C96500FF235B /* Login Manager.swift */; };
+		292C18932C03F92500FF235B /* Device Connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18922C03F92500FF235B /* Device Connect.swift */; };
+		292C18952C05068A00FF235B /* QRCameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18942C05068A00FF235B /* QRCameraManager.swift */; };
+		292C18972C06B95700FF235B /* NWConnection Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18962C06B95700FF235B /* NWConnection Extension.swift */; };
+		292C189A2C0B955700FF235B /* Session Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18992C0B955700FF235B /* Session Key.swift */; };
+		292C189C2C0BC5B200FF235B /* User Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C189B2C0BC5B200FF235B /* User Request.swift */; };
+		292C189E2C16441B00FF235B /* Server Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C189D2C16441B00FF235B /* Server Response.swift */; };
+		292C18A12C1645EF00FF235B /* Server Response Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18A02C1645EF00FF235B /* Server Response Data.swift */; };
+		292C18A32C16469600FF235B /* Response Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18A22C16469600FF235B /* Response Data.swift */; };
+		292C18A62C17D65E00FF235B /* Connection Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18A52C17D65E00FF235B /* Connection Error.swift */; };
+		292C18A82C1B9D4200FF235B /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18A72C1B9D4200FF235B /* UserRequest.swift */; };
+		292C18AA2C1B9DEF00FF235B /* UserSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18A92C1B9DEF00FF235B /* UserSessionRequest.swift */; };
+		292C18AC2C1CFD2800FF235B /* Initiate Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18AB2C1CFD2800FF235B /* Initiate Connection.swift */; };
+		292C18AF2C20EE2C00FF235B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18AE2C20EE2C00FF235B /* AppDelegate.swift */; };
+		292C18B72C20F96D00FF235B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18B62C20F96D00FF235B /* ViewController.swift */; };
+		292C18B82C27948B00FF235B /* SpotifyiOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 292C18B32C20F8DF00FF235B /* SpotifyiOS.xcframework */; };
+		292C18B92C27948B00FF235B /* SpotifyiOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 292C18B32C20F8DF00FF235B /* SpotifyiOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		292C18BE2C2A33BD00FF235B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18BD2C2A33BD00FF235B /* Constants.swift */; };
+		292C18C02C2A3B3A00FF235B /* SpotifySessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18BF2C2A3B3A00FF235B /* SpotifySessionManager.swift */; };
+		292C18C22C31EF3200FF235B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18C12C31EF3200FF235B /* SceneDelegate.swift */; };
+		292C18C52C37541900FF235B /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292C18C42C37541900FF235B /* Library.swift */; };
 		296FA94B2BF960D9000CF0C2 /* Audio_ShareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA94A2BF960D9000CF0C2 /* Audio_ShareApp.swift */; };
 		296FA94D2BF960D9000CF0C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA94C2BF960D9000CF0C2 /* ContentView.swift */; };
 		296FA94F2BF960DA000CF0C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 296FA94E2BF960DA000CF0C2 /* Assets.xcassets */; };
@@ -14,6 +38,19 @@
 		296FA95C2BF960DA000CF0C2 /* Audio_ShareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA95B2BF960DA000CF0C2 /* Audio_ShareTests.swift */; };
 		296FA9662BF960DA000CF0C2 /* Audio_ShareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA9652BF960DA000CF0C2 /* Audio_ShareUITests.swift */; };
 		296FA9682BF960DA000CF0C2 /* Audio_ShareUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA9672BF960DA000CF0C2 /* Audio_ShareUITestsLaunchTests.swift */; };
+		296FA9762BF961E7000CF0C2 /* LocalNetworkAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA9752BF961E7000CF0C2 /* LocalNetworkAuthorization.swift */; };
+		296FA9782BFA7C50000CF0C2 /* QRCodeCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA9772BFA7C50000CF0C2 /* QRCodeCoodinator.swift */; };
+		296FA97A2BFA7CAE000CF0C2 /* QRCodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA9792BFA7CAE000CF0C2 /* QRCodeScanner.swift */; };
+		296FA97C2BFA8BAA000CF0C2 /* QRCodeFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA97B2BFA8BAA000CF0C2 /* QRCodeFrameView.swift */; };
+		296FA97F2BFAC395000CF0C2 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 296FA97E2BFAC395000CF0C2 /* CodeScanner */; };
+		296FA9812BFC045B000CF0C2 /* Security.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA9802BFC045B000CF0C2 /* Security.swift */; };
+		296FA9842BFD2427000CF0C2 /* ServiceDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA9832BFD2427000CF0C2 /* ServiceDiscovery.swift */; };
+		296FA9862BFE82B4000CF0C2 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA9852BFE82B4000CF0C2 /* SocketManager.swift */; };
+		296FA98A2BFF95B7000CF0C2 /* Inbound Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA9892BFF95B7000CF0C2 /* Inbound Handler.swift */; };
+		296FA98C2BFF95F1000CF0C2 /* Outbound Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA98B2BFF95F1000CF0C2 /* Outbound Handler.swift */; };
+		296FA98F2BFF97C9000CF0C2 /* NIO in Frameworks */ = {isa = PBXBuildFile; productRef = 296FA98E2BFF97C9000CF0C2 /* NIO */; };
+		296FA9912BFFAEDC000CF0C2 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA9902BFFAEDC000CF0C2 /* ConnectionManager.swift */; };
+		296FA9942BFFF327000CF0C2 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296FA9932BFFF327000CF0C2 /* LoginPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +70,45 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		292C18BA2C27948B00FF235B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				292C18B92C27948B00FF235B /* SpotifyiOS.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		292C18872C0112BE00FF235B /* Audio Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Audio Engine.swift"; sourceTree = "<group>"; };
+		292C188C2C029D1900FF235B /* Keychain Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keychain Manager.swift"; sourceTree = "<group>"; };
+		292C188E2C03AAA000FF235B /* Color Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color Extension.swift"; sourceTree = "<group>"; };
+		292C18902C03C96500FF235B /* Login Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login Manager.swift"; sourceTree = "<group>"; };
+		292C18922C03F92500FF235B /* Device Connect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device Connect.swift"; sourceTree = "<group>"; };
+		292C18942C05068A00FF235B /* QRCameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCameraManager.swift; sourceTree = "<group>"; };
+		292C18962C06B95700FF235B /* NWConnection Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NWConnection Extension.swift"; sourceTree = "<group>"; };
+		292C18992C0B955700FF235B /* Session Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session Key.swift"; sourceTree = "<group>"; };
+		292C189B2C0BC5B200FF235B /* User Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User Request.swift"; sourceTree = "<group>"; };
+		292C189D2C16441B00FF235B /* Server Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Server Response.swift"; sourceTree = "<group>"; };
+		292C18A02C1645EF00FF235B /* Server Response Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Server Response Data.swift"; sourceTree = "<group>"; };
+		292C18A22C16469600FF235B /* Response Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response Data.swift"; sourceTree = "<group>"; };
+		292C18A52C17D65E00FF235B /* Connection Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Connection Error.swift"; sourceTree = "<group>"; };
+		292C18A72C1B9D4200FF235B /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
+		292C18A92C1B9DEF00FF235B /* UserSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRequest.swift; sourceTree = "<group>"; };
+		292C18AB2C1CFD2800FF235B /* Initiate Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Initiate Connection.swift"; sourceTree = "<group>"; };
+		292C18AE2C20EE2C00FF235B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		292C18B02C20F28500FF235B /* Audio Share-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Audio Share-Bridging-Header.h"; sourceTree = "<group>"; };
+		292C18B32C20F8DF00FF235B /* SpotifyiOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = SpotifyiOS.xcframework; sourceTree = "<group>"; };
+		292C18B62C20F96D00FF235B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		292C18BD2C2A33BD00FF235B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		292C18BF2C2A3B3A00FF235B /* SpotifySessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifySessionManager.swift; sourceTree = "<group>"; };
+		292C18C12C31EF3200FF235B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		292C18C42C37541900FF235B /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		296FA9472BF960D9000CF0C2 /* Audio Share.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Audio Share.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		296FA94A2BF960D9000CF0C2 /* Audio_ShareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio_ShareApp.swift; sourceTree = "<group>"; };
 		296FA94C2BF960D9000CF0C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +119,19 @@
 		296FA9612BF960DA000CF0C2 /* Audio ShareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Audio ShareUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		296FA9652BF960DA000CF0C2 /* Audio_ShareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio_ShareUITests.swift; sourceTree = "<group>"; };
 		296FA9672BF960DA000CF0C2 /* Audio_ShareUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio_ShareUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		296FA9742BF9610A000CF0C2 /* Audio-Share-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Audio-Share-Info.plist"; sourceTree = SOURCE_ROOT; };
+		3125F8A1A9934719B7D3A575 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		296FA9752BF961E7000CF0C2 /* LocalNetworkAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNetworkAuthorization.swift; sourceTree = "<group>"; };
+		296FA9772BFA7C50000CF0C2 /* QRCodeCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeCoodinator.swift; sourceTree = "<group>"; };
+		296FA9792BFA7CAE000CF0C2 /* QRCodeScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScanner.swift; sourceTree = "<group>"; };
+		296FA97B2BFA8BAA000CF0C2 /* QRCodeFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeFrameView.swift; sourceTree = "<group>"; };
+		296FA9802BFC045B000CF0C2 /* Security.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Security.swift; sourceTree = "<group>"; };
+		296FA9832BFD2427000CF0C2 /* ServiceDiscovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDiscovery.swift; sourceTree = "<group>"; };
+		296FA9852BFE82B4000CF0C2 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
+		296FA9892BFF95B7000CF0C2 /* Inbound Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Inbound Handler.swift"; sourceTree = "<group>"; };
+		296FA98B2BFF95F1000CF0C2 /* Outbound Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Outbound Handler.swift"; sourceTree = "<group>"; };
+		296FA9902BFFAEDC000CF0C2 /* ConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
+		296FA9932BFFF327000CF0C2 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +139,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296FA97F2BFAC395000CF0C2 /* CodeScanner in Frameworks */,
+				292C18B82C27948B00FF235B /* SpotifyiOS.xcframework in Frameworks */,
+				296FA98F2BFF97C9000CF0C2 /* NIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +162,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		292C18892C01151A00FF235B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				292C188E2C03AAA000FF235B /* Color Extension.swift */,
+				292C18962C06B95700FF235B /* NWConnection Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		292C18982C0B953700FF235B /* JSON Encoded Data */ = {
+			isa = PBXGroup;
+			children = (
+				292C18992C0B955700FF235B /* Session Key.swift */,
+				292C189B2C0BC5B200FF235B /* User Request.swift */,
+				292C189D2C16441B00FF235B /* Server Response.swift */,
+				292C18A22C16469600FF235B /* Response Data.swift */,
+				292C18A92C1B9DEF00FF235B /* UserSessionRequest.swift */,
+				292C18AB2C1CFD2800FF235B /* Initiate Connection.swift */,
+			);
+			path = "JSON Encoded Data";
+			sourceTree = "<group>";
+		};
+		292C189F2C1645D600FF235B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				292C18A02C1645EF00FF235B /* Server Response Data.swift */,
+				292C18A72C1B9D4200FF235B /* UserRequest.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		292C18A42C17D62200FF235B /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				292C18A52C17D65E00FF235B /* Connection Error.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+		292C18B52C20F95F00FF235B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				292C18C32C37540200FF235B /* Library */,
+				292C18B62C20F96D00FF235B /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		292C18C32C37540200FF235B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				292C18C42C37541900FF235B /* Library.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		296FA93E2BF960D9000CF0C2 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +225,7 @@
 				296FA95A2BF960DA000CF0C2 /* Audio ShareTests */,
 				296FA9642BF960DA000CF0C2 /* Audio ShareUITests */,
 				296FA9482BF960D9000CF0C2 /* Products */,
+				296FA98D2BFF97C9000CF0C2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,10 +242,30 @@
 		296FA9492BF960D9000CF0C2 /* Audio Share */ = {
 			isa = PBXGroup;
 			children = (
+				292C18B52C20F95F00FF235B /* Controllers */,
+				292C18A42C17D62200FF235B /* Errors */,
+				292C189F2C1645D600FF235B /* Protocols */,
+				292C18982C0B953700FF235B /* JSON Encoded Data */,
+				292C18892C01151A00FF235B /* Extensions */,
+				296FA9922BFFF30B000CF0C2 /* Login Page */,
+				296FA9882BFF9598000CF0C2 /* Network Handlers */,
+				296FA9822BFD240E000CF0C2 /* Managers */,
+				3125F8A1A9934719B7D3A575 /* Secrets.xcconfig */,
+				296FA9742BF9610A000CF0C2 /* Audio-Share-Info.plist */,
 				296FA94A2BF960D9000CF0C2 /* Audio_ShareApp.swift */,
 				296FA94C2BF960D9000CF0C2 /* ContentView.swift */,
 				296FA94E2BF960DA000CF0C2 /* Assets.xcassets */,
 				296FA9502BF960DA000CF0C2 /* Preview Content */,
+				296FA9752BF961E7000CF0C2 /* LocalNetworkAuthorization.swift */,
+				296FA9772BFA7C50000CF0C2 /* QRCodeCoodinator.swift */,
+				292C18922C03F92500FF235B /* Device Connect.swift */,
+				296FA9792BFA7CAE000CF0C2 /* QRCodeScanner.swift */,
+				296FA97B2BFA8BAA000CF0C2 /* QRCodeFrameView.swift */,
+				296FA9802BFC045B000CF0C2 /* Security.swift */,
+				292C18AE2C20EE2C00FF235B /* AppDelegate.swift */,
+				292C18B02C20F28500FF235B /* Audio Share-Bridging-Header.h */,
+				292C18BD2C2A33BD00FF235B /* Constants.swift */,
+				292C18C12C31EF3200FF235B /* SceneDelegate.swift */,
 			);
 			path = "Audio Share";
 			sourceTree = "<group>";
@@ -127,6 +295,46 @@
 			path = "Audio ShareUITests";
 			sourceTree = "<group>";
 		};
+		296FA9822BFD240E000CF0C2 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				296FA9832BFD2427000CF0C2 /* ServiceDiscovery.swift */,
+				296FA9852BFE82B4000CF0C2 /* SocketManager.swift */,
+				296FA9902BFFAEDC000CF0C2 /* ConnectionManager.swift */,
+				292C18872C0112BE00FF235B /* Audio Engine.swift */,
+				292C188C2C029D1900FF235B /* Keychain Manager.swift */,
+				292C18902C03C96500FF235B /* Login Manager.swift */,
+				292C18942C05068A00FF235B /* QRCameraManager.swift */,
+				292C18BF2C2A3B3A00FF235B /* SpotifySessionManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		296FA9882BFF9598000CF0C2 /* Network Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				296FA9892BFF95B7000CF0C2 /* Inbound Handler.swift */,
+				296FA98B2BFF95F1000CF0C2 /* Outbound Handler.swift */,
+			);
+			path = "Network Handlers";
+			sourceTree = "<group>";
+		};
+		296FA98D2BFF97C9000CF0C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				292C18B32C20F8DF00FF235B /* SpotifyiOS.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		296FA9922BFFF30B000CF0C2 /* Login Page */ = {
+			isa = PBXGroup;
+			children = (
+				296FA9932BFFF327000CF0C2 /* LoginPage.swift */,
+			);
+			path = "Login Page";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,12 +345,17 @@
 				296FA9432BF960D9000CF0C2 /* Sources */,
 				296FA9442BF960D9000CF0C2 /* Frameworks */,
 				296FA9452BF960D9000CF0C2 /* Resources */,
+				292C18BA2C27948B00FF235B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Audio Share";
+			packageProductDependencies = (
+				296FA97E2BFAC395000CF0C2 /* CodeScanner */,
+				296FA98E2BFF97C9000CF0C2 /* NIO */,
+			);
 			productName = "Audio Share";
 			productReference = 296FA9472BF960D9000CF0C2 /* Audio Share.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +428,11 @@
 				Base,
 			);
 			mainGroup = 296FA93E2BF960D9000CF0C2;
+			packageReferences = (
+				296FA97D2BFAC395000CF0C2 /* XCLocalSwiftPackageReference "../../CodeScanner" */,
+				296FA9872BFE8613000CF0C2 /* XCRemoteSwiftPackageReference "swift-nio" */,
+				292C18AD2C20DF5100FF235B /* XCLocalSwiftPackageReference "../../audio_share/ios-sdk-2.1.1" */,
+			);
 			productRefGroup = 296FA9482BF960D9000CF0C2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +475,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				296FA97C2BFA8BAA000CF0C2 /* QRCodeFrameView.swift in Sources */,
+				296FA9912BFFAEDC000CF0C2 /* ConnectionManager.swift in Sources */,
+				292C18A82C1B9D4200FF235B /* UserRequest.swift in Sources */,
 				296FA94D2BF960D9000CF0C2 /* ContentView.swift in Sources */,
+				296FA9842BFD2427000CF0C2 /* ServiceDiscovery.swift in Sources */,
+				296FA97A2BFA7CAE000CF0C2 /* QRCodeScanner.swift in Sources */,
+				292C18C02C2A3B3A00FF235B /* SpotifySessionManager.swift in Sources */,
+				292C18C22C31EF3200FF235B /* SceneDelegate.swift in Sources */,
+				292C18882C0112BE00FF235B /* Audio Engine.swift in Sources */,
+				292C18BE2C2A33BD00FF235B /* Constants.swift in Sources */,
+				296FA9782BFA7C50000CF0C2 /* QRCodeCoodinator.swift in Sources */,
+				292C18932C03F92500FF235B /* Device Connect.swift in Sources */,
+				292C18B72C20F96D00FF235B /* ViewController.swift in Sources */,
+				296FA9942BFFF327000CF0C2 /* LoginPage.swift in Sources */,
 				296FA94B2BF960D9000CF0C2 /* Audio_ShareApp.swift in Sources */,
+				296FA9762BF961E7000CF0C2 /* LocalNetworkAuthorization.swift in Sources */,
+				296FA98A2BFF95B7000CF0C2 /* Inbound Handler.swift in Sources */,
+				292C18912C03C96500FF235B /* Login Manager.swift in Sources */,
+				292C18A32C16469600FF235B /* Response Data.swift in Sources */,
+				292C18952C05068A00FF235B /* QRCameraManager.swift in Sources */,
+				292C18A12C1645EF00FF235B /* Server Response Data.swift in Sources */,
+				292C18AC2C1CFD2800FF235B /* Initiate Connection.swift in Sources */,
+				292C18C52C37541900FF235B /* Library.swift in Sources */,
+				292C18AF2C20EE2C00FF235B /* AppDelegate.swift in Sources */,
+				296FA98C2BFF95F1000CF0C2 /* Outbound Handler.swift in Sources */,
+				292C189C2C0BC5B200FF235B /* User Request.swift in Sources */,
+				292C188F2C03AAA000FF235B /* Color Extension.swift in Sources */,
+				292C188D2C029D1900FF235B /* Keychain Manager.swift in Sources */,
+				292C189E2C16441B00FF235B /* Server Response.swift in Sources */,
+				292C18972C06B95700FF235B /* NWConnection Extension.swift in Sources */,
+				292C18AA2C1B9DEF00FF235B /* UserSessionRequest.swift in Sources */,
+				292C189A2C0B955700FF235B /* Session Key.swift in Sources */,
+				296FA9862BFE82B4000CF0C2 /* SocketManager.swift in Sources */,
+				296FA9812BFC045B000CF0C2 /* Security.swift in Sources */,
+				292C18A62C17D65E00FF235B /* Connection Error.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +598,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -404,7 +655,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -416,7 +667,10 @@
 		};
 		296FA96C2BF960DA000CF0C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3125F8A1A9934719B7D3A575 /* Secrets.xcconfig */;
 			buildSettings = {
+				APP_HOST = "http://192.168.68.60:8080";
+				APP_URL_SCHEME = audioshare;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -424,7 +678,17 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Audio Share/Preview Content\"";
 				DEVELOPMENT_TEAM = 9P82L824DU;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Audio-Share-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please let me use your camera";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "We need your network";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please let me use your mic";
+				INFOPLIST_KEY_SpotifyClientId = "$(SPOTIFY_CLIENT_ID)";
+				INFOPLIST_KEY_SpotifyClientSecret = "$(SPOTIFY_CLIENT_SECRET)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -435,6 +699,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "fgh.Audio-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -445,7 +710,10 @@
 		};
 		296FA96D2BF960DA000CF0C2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3125F8A1A9934719B7D3A575 /* Secrets.xcconfig */;
 			buildSettings = {
+				APP_HOST = "https://audio-share-068ed037b800.herokuapp.com\n";
+				APP_URL_SCHEME = audioshare;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -453,7 +721,17 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Audio Share/Preview Content\"";
 				DEVELOPMENT_TEAM = 9P82L824DU;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Audio-Share-Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please let me use your camera";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "We need your network";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please let me use your mic";
+				INFOPLIST_KEY_SpotifyClientId = "$(SPOTIFY_CLIENT_ID)";
+				INFOPLIST_KEY_SpotifyClientSecret = "$(SPOTIFY_CLIENT_SECRET)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -464,6 +742,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "fgh.Audio-Share";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -588,6 +867,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		292C18AD2C20DF5100FF235B /* XCLocalSwiftPackageReference "../../audio_share/ios-sdk-2.1.1" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../audio_share/ios-sdk-2.1.1";
+		};
+		296FA97D2BFAC395000CF0C2 /* XCLocalSwiftPackageReference "../../CodeScanner" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../CodeScanner;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		296FA9872BFE8613000CF0C2 /* XCRemoteSwiftPackageReference "swift-nio" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-nio.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.65.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		296FA97E2BFAC395000CF0C2 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CodeScanner;
+		};
+		296FA98E2BFF97C9000CF0C2 /* NIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 296FA9872BFE8613000CF0C2 /* XCRemoteSwiftPackageReference "swift-nio" */;
+			productName = NIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 296FA93F2BF960D9000CF0C2 /* Project object */;
 }

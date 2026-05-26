@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>UIApplicationSceneManifest</key>
+        <dict>
+            <key>UIApplicationSupportsMultipleScenes</key>
+            <false/>
+            <key>UISceneConfigurations</key>
+            <dict>
+                <key>UIWindowSceneSessionRoleApplication</key>
+                <array>
+                    <dict>
+                        <key>UISceneConfigurationName</key>
+                        <string>Default Configuration</string>
+                        <key>UISceneDelegateClassName</key>
+                        <string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+                    </dict>
+                </array>
+            </dict>
+        </dict>
+        <key>CFBundleURLTypes</key>
+        <array>
+            <dict>
+                <key>CFBundleTypeRole</key>
+                <string>Editor</string>
+                <key>CFBundleURLName</key>
+                <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+                <key>CFBundleURLSchemes</key>
+                <array>
+                    <string>audioshare</string>
+                </array>
+            </dict>
+        </array>
+        <key>LSApplicationQueriesSchemes</key>
+        <array>
+            <string>spotify</string>
+            <string>audio_share</string>
+        </array>
+        <key>NSBonjourServices</key>
+        <array>
+            <string>_audioshare._tcp</string>
+        </array>
+        <key>APPHost</key>
+        <string>$(APP_HOST)</string>
+        
+    </dict>
+
+</plist>
