@@ -36,3 +36,7 @@ Pods/
 
 # macOS
 .DS_Store
+
+# Third-party SDKs — download manually from vendor
+# Spotify iOS SDK: https://developer.spotify.com/documentation/ios/
+SpotifyiOS.xcframework/
