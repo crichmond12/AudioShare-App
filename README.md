@@ -9,7 +9,7 @@ An iOS app that discovers and connects to a self-hosted [Audio Share server](htt
 ## Features
 
 - **Automatic server discovery** — uses Bonjour/mDNS to find Audio Share servers on the local network with no manual IP entry
-- **QR code device pairing** — scan a QR code displayed on the server to connect instantly
+- **QR code device pairing** — scan a QR code displayed on the server to connect instantly; the code embeds a 32-byte pairing secret that binds the session key to the specific device
 - **End-to-end encryption** — Curve25519 key exchange + AES-GCM via Apple's CryptoKit
 - **Secure key storage** — session and private keys stored in the iOS Keychain
 - **Spotify integration** — browse and control Spotify playback via the Spotify iOS SDK
@@ -141,7 +141,8 @@ All communication between the iOS app and the server is encrypted:
 
 - **Key exchange:** Curve25519 Elliptic Curve Diffie-Hellman (ephemeral per session)
 - **Symmetric encryption:** AES-256-GCM (authenticated encryption via CryptoKit)
-- **Key storage:** Private keys and session keys stored in the iOS Keychain, accessible only when the device is unlocked
+- **Device binding:** The QR code carries a 32-byte pairing secret alongside the server's serial number. That secret is used as the HKDF salt when deriving the session's symmetric key, so the key is cryptographically tied to the specific device that was paired. An attacker who intercepts the connection but never saw the QR code cannot produce a valid key.
+- **Key storage:** Private keys, session keys, and per-device pairing secrets are stored in the iOS Keychain, accessible only when the device is unlocked
 - **No cloud dependency:** All data stays on your local network
 
 ---
