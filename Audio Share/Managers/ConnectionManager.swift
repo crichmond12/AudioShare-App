@@ -15,7 +15,8 @@ class ConnectionManager{
     private var connected: Bool = false;
     private var ip_address: String = "";
     private var port: Int = -1;
-    
+    private var currentSerialNumber: String = "";
+
     private var connection: NWConnection?;
     
     func getLocalServerIPAddress() -> String {
@@ -115,9 +116,10 @@ class ConnectionManager{
         return nil;
     }*/
     
-    func connect(ip_address: String, port: Int) async {
+    func connect(ip_address: String, port: Int, serialNumber: String) async {
         self.ip_address = ip_address;
         self.port = port;
+        self.currentSerialNumber = serialNumber;
         let loginManager = LoginManager.shared;
         guard var User = loginManager.getUser() else {
             print("No User Logged in.")
@@ -192,9 +194,14 @@ class ConnectionManager{
             }
             
             let SEC = Sec.shared;
-            
-            guard let (session_uuid, symmetricKey) = SEC.getSessionData(json: sessionKey) else {
-                print("Could not derive sessino data from json.")
+
+            guard let pairingSecret = keychainManager.loadPairingSecret(for: self.currentSerialNumber) else {
+                print("No pairing secret found for device \(self.currentSerialNumber)")
+                return nil
+            }
+
+            guard let (session_uuid, symmetricKey) = SEC.getSessionData(json: sessionKey, pairingSecret: pairingSecret) else {
+                print("Could not derive session data from json.")
                 return nil;
             }
             DispatchQueue.main.async {
@@ -259,11 +266,15 @@ class ConnectionManager{
         let userRequest = UserRequest(task: task, data: codableObject, session_token: uuid);
         
         do {
-            let data = try json_encoder.encode(userRequest);
-            let encryptedData = Sec.shared.encryptWithSessionKey(data);
-            self.sendData(data: data);
+            let data = try json_encoder.encode(userRequest)
+            guard let encryptedData = Sec.shared.encryptWithSessionKey(data) else {
+                print("Error: failed to encrypt outgoing data")
+                return
+            }
+            // base64-encode so the server's decrypt_data can decode it with STANDARD.decode()
+            self.sendData(data: encryptedData.base64EncodedData())
         }
-        catch{
+        catch {
             return;
         }
  

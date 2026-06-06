@@ -80,86 +80,50 @@ class Sec {
             }
     }
     
-    func getSessionData(json: SessionKey) -> (UUID, SymmetricKey)? {
+    func getSessionData(json: SessionKey, pairingSecret: Data) -> (UUID, SymmetricKey)? {
         guard let encryptedData = Data(base64Encoded: json.session) else {
             print("Could not decode base64 session key")
-            return nil;
+            return nil
         }
-        
-        guard let User = loginManager.getUser() else {
-            return nil;
+
+        guard let User = loginManager.getUser() else { return nil }
+        let username = User.username
+
+        guard let private_key = self.keychainManager.loadPrivateKey(tag: "\(username!)_audioshare_pkey") else {
+            return nil
         }
-        let username = User.username;
-        
-        guard let private_key = self.keychainManager.loadPrivateKey(tag: "\(username!)_audioshare_pkey") else{
-            return nil;
-        }
-        
-        guard let public_key = self.keychainManager.loadPublicKey(tag: "\(username!)_audioshare_pubkey") else {
-            return nil;
-        }
-        
+
         let nonce = encryptedData.prefix(12)
         let ciphertextAndTag = encryptedData.dropFirst(12).dropLast(32)
         let serverPublicKeyData = encryptedData.suffix(32)
-        
+
         guard let server_public_key = try? Curve25519.KeyAgreement.PublicKey(rawRepresentation: serverPublicKeyData) else {
-               print("Failed to create server public key")
-               return nil
-           }
-       
-        // Combine ciphertext and tag
-        //let combinedCiphertext = ciphertext + tag
-        let combined = nonce + ciphertextAndTag;
-        
+            print("Failed to create server public key")
+            return nil
+        }
+
+        let combined = nonce + ciphertextAndTag
+
         do {
-            
             let sharedSecret = try private_key.sharedSecretFromKeyAgreement(with: server_public_key)
-                   let symmetricKey = sharedSecret.hkdfDerivedSymmetricKey(
-                       using: SHA256.self,
-                       salt: Data(),
-                       sharedInfo: Data(),
-                       outputByteCount: 32
-                   )
-
-                   // Initialize SealedBox with nonce, ciphertext, and tag
-                  let sealedBox = try AES.GCM.SealedBox(combined: combined)
-
-                   // Decrypt the session key using the symmetric key
-                   let decryptedSessionKey = try AES.GCM.open(sealedBox, using: symmetricKey)
-
-                   // Convert the decrypted session key to a SymmetricKey
-                   let sessionSymmetricKey = SymmetricKey(data: decryptedSessionKey)
-
-                   return (UUID(uuidString: json.uuid)!, sessionSymmetricKey)
-            // Initialize SealedBox with nonce, ciphertext, and tag
-            /*let sealedBox = try AES.GCM.SealedBox(combined: nonce + ciphertext);
-           
-            // Derive the shared secret from the private key and the corresponding public key
-            let sharedSecret = try private_key.sharedSecretFromKeyAgreement(with: public_key)
-           
-            // Derive the symmetric key from the shared secret
+            // The pairing secret is used as the HKDF salt — must match the server's salt.
+            // A MITM who doesn't know the pairing secret cannot produce a valid encryption key.
             let symmetricKey = sharedSecret.hkdfDerivedSymmetricKey(
                 using: SHA256.self,
-                salt: Data(),
+                salt: pairingSecret,
                 sharedInfo: Data(),
                 outputByteCount: 32
             )
-           
-           // Decrypt the session key using the symmetric key
-           let decryptedSessionKey = try AES.GCM.open(sealedBox, using: symmetricKey)
-            print("HERERERE");
-           
-           // Convert the decrypted session key to a SymmetricKey
-           let sessionSymmetricKey = SymmetricKey(data: decryptedSessionKey)
-           
-           return (UUID(uuidString: json.uuid)!, sessionSymmetricKey)*/
-       } catch {
-           print("Error decrypting session key: \(error)")
-           return nil
-       }
-         
-        // Decrypt the ciphertext using AES-GCM
+
+            let sealedBox = try AES.GCM.SealedBox(combined: combined)
+            let decryptedSessionKey = try AES.GCM.open(sealedBox, using: symmetricKey)
+            let sessionSymmetricKey = SymmetricKey(data: decryptedSessionKey)
+
+            return (UUID(uuidString: json.uuid)!, sessionSymmetricKey)
+        } catch {
+            print("Error decrypting session key: \(error)")
+            return nil
+        }
     }
     public func decryptMessage(encryptedData: Data) -> UserRequest? {
         

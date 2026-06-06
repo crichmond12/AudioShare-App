@@ -8,8 +8,13 @@
 import SwiftUI
 import CodeScanner
 
+// QR code payload format: {"s":"<serial_number>","ps":"<base64_pairing_secret>"}
+private struct QRPayload: Decodable {
+    let s: String   // serial number — used for mDNS service matching
+    let ps: String  // pairing secret (base64) — used as HKDF salt to prevent MITM
+}
+
 struct DeviceConnect: View {
-    //let private loginManager = LoginManager();
     @StateObject private var cameraManager = QRCameraManager.shared;
     private let keychainManager = KeychainManager();
     @StateObject private var serviceManager = ServiceDiscoveryManager();
@@ -20,31 +25,37 @@ struct DeviceConnect: View {
                 let connectionManager = ConnectionManager.shared;
                 switch response {
                 case .success(let result):
-                    let netService = self.serviceManager.matchSerialNumber(serial_code: result.string);
-                    let host_data = self.serviceManager.getHostData(netService: netService!);
-                    if (host_data != nil){
-                        let (ip_address, port) = host_data!;
-                        let loginManager = LoginManager.shared;
-                        let User = loginManager.getUser();
-                        if (User == nil){
-                            print("Can't find user.")
-                            return;
-                        }
-                        let username = User!.username;
-                        let public_key = keychainManager.loadPublicKey(tag: "\(username!)_audioshare_pubkey");
-                        Task{
-                            await connectionManager.connect(ip_address: ip_address, port: port);
-                            
-                        }
-                        //self.connectionManager = ConnectionManager(ip_address: ip_address, port: port);
-                        //self.connectionManager!.connect();
-                        //let (public_key, private_key) = generateKeyPair() ?? (nil, nil);
-                        //let data = "Whatup Biatch".data(using: public_key.data();
-                        //let signature = signMessage(message: "Create User".data(using: .utf8)!, privateKey: private_key!)
-                        //let data = public_key
-                        //self.connectionManager!.sendData(data: data!);
+                    guard
+                        let payloadData = result.string.data(using: .utf8),
+                        let qrPayload = try? JSONDecoder().decode(QRPayload.self, from: payloadData),
+                        let pairingSecretData = Data(base64Encoded: qrPayload.ps),
+                        pairingSecretData.count == 32
+                    else {
+                        print("Invalid QR code format — expected {\"s\":\"...\",\"ps\":\"...\"}")
+                        return
                     }
-                    
+
+                    let serialNumber = qrPayload.s
+                    keychainManager.savePairingSecret(pairingSecretData, for: serialNumber)
+
+                    guard let netService = self.serviceManager.matchSerialNumber(serial_code: serialNumber) else {
+                        print("No mDNS service found for serial: \(serialNumber)")
+                        return
+                    }
+                    guard let host_data = self.serviceManager.getHostData(netService: netService) else {
+                        return
+                    }
+                    let (ip_address, port) = host_data
+
+                    guard LoginManager.shared.getUser() != nil else {
+                        print("Can't find user.")
+                        return
+                    }
+
+                    Task {
+                        await connectionManager.connect(ip_address: ip_address, port: port, serialNumber: serialNumber)
+                    }
+
                     print("Found code: \(result.string)")
                 case .failure(let error):
                     print(error.localizedDescription)

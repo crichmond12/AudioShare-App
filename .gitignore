@@ -37,6 +37,9 @@ Pods/
 # macOS
 .DS_Store
 
+# Project notes — local only
+commitmessage.txt
+
 # Large media files — never commit these to git
 *.mov
 *.mp4

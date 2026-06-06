@@ -237,6 +237,32 @@ class KeychainManager {
         return (username, password, pkey)
     }
     
+    @discardableResult
+    func savePairingSecret(_ secret: Data, for serialNumber: String) -> Bool {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: "audio_share_pairing",
+            kSecAttrAccount as String: serialNumber,
+            kSecValueData as String: secret
+        ]
+        SecItemDelete(query as CFDictionary)
+        return SecItemAdd(query as CFDictionary, nil) == errSecSuccess
+    }
+
+    func loadPairingSecret(for serialNumber: String) -> Data? {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: "audio_share_pairing",
+            kSecAttrAccount as String: serialNumber,
+            kSecMatchLimit as String: kSecMatchLimitOne,
+            kSecReturnData as String: true
+        ]
+        var item: CFTypeRef?
+        guard SecItemCopyMatching(query as CFDictionary, &item) == errSecSuccess,
+              let data = item as? Data else { return nil }
+        return data
+    }
+
     func areCredentialsSaved() -> Bool {
            // Define the query attributes to retrieve all items for the service
            let query: [String: Any] = [
