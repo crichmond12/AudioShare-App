@@ -91,5 +91,15 @@ class LoginManager : ObservableObject {
         self.user.session_key = session_key;
         self.isConnectedToDevice = true;
     }
-    
+
+    /// Drop the device session (UUID + symmetric key) while keeping the user
+    /// logged in. Called before reconnecting so the handshake runs fresh — the
+    /// device server keeps sessions only in memory, so a server restart leaves
+    /// our cached session stale.
+    func clearDeviceSession(){
+        self.user.UUID = nil;
+        self.user.session_key = nil;
+        self.isConnectedToDevice = false;
+    }
+
 }

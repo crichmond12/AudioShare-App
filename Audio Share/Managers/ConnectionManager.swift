@@ -144,7 +144,38 @@ class ConnectionManager{
         self.User = User;
         //self.receiveData();
     }
-    
+
+    /// Re-establish a device session without re-scanning the QR. Used after the
+    /// device server restarts (which drops its in-memory session and our TCP
+    /// socket): tear down the stale socket/session, rediscover the device by
+    /// mDNS, reuse the Keychain pairing secret, and run a fresh handshake.
+    /// Returns true once a new session is established.
+    @discardableResult
+    func reconnect() async -> Bool {
+        // Drop the stale socket + session so connect() runs a fresh handshake
+        // (it skips the handshake while User.UUID is non-nil).
+        self.connection?.cancel()
+        self.connection = nil
+        self.connected = false
+        await MainActor.run { LoginManager.shared.clearDeviceSession() }
+
+        let discovery = ServiceDiscoveryManager()
+        discovery.discoverService()
+        defer { discovery.stop() }
+
+        guard let (netService, serial) = await discovery.awaitPairedService(timeout: 5) else {
+            print("reconnect: no known Audio Share device found on the network")
+            return false
+        }
+        guard let (ip_address, port) = discovery.getHostData(netService: netService) else {
+            print("reconnect: could not resolve device address")
+            return false
+        }
+
+        await self.connect(ip_address: ip_address, port: port, serialNumber: serial)
+        return LoginManager.shared.isConnectedToDevice
+    }
+
     func start(ip_address: String, port: Int) {
         self.connection = NWConnection(host: NWEndpoint.Host(ip_address), port: NWEndpoint.Port(rawValue: UInt16(port))!, using: .tcp)
         self.connection!.stateUpdateHandler = { newState in
@@ -208,11 +239,13 @@ class ConnectionManager{
                 print("Could not derive session data from json.")
                 return nil;
             }
-            DispatchQueue.main.async {
+            // Set the session synchronously (not fire-and-forget) so callers see
+            // isConnectedToDevice/session_key set the moment this returns — the
+            // reconnect() flow checks that flag right after the handshake.
+            await MainActor.run {
                 LoginManager.shared.setSessionKey(uuid: session_uuid, session_key: symmetricKey)
-                
             }
-            
+
             let User = LoginManager.shared.getUser();
             return User;
         }
@@ -281,9 +314,43 @@ class ConnectionManager{
         catch {
             return;
         }
- 
+
     }
-    
+
+    /// Encrypted control message with a plain JSON-object payload, e.g.
+    /// `{"task":"play","data":{"url":...,"zone":"default"},"session_token":...}`.
+    /// The server (`commands::dispatch`) reads `data.url` / `data.zone`, so `data`
+    /// must serialize as a nested object — unlike `sendData(_:task:)`/UserRequest,
+    /// which encodes `data` as base64 and can't carry a `[String:String]` payload.
+    private struct TaskMessage: Encodable {
+        let task: String
+        let data: [String: String]
+        let session_token: String
+    }
+
+    /// Send a playback task (`play`/`stop`/…) with a string payload to the device.
+    func sendTask(_ task: String, data: [String: String]) {
+        guard let user = LoginManager.shared.getUser(),
+              user.session_key != nil,
+              let uuid = user.UUID else {
+            print("sendTask(\(task)): no active device session")
+            return
+        }
+
+        let message = TaskMessage(task: task, data: data, session_token: uuid.uuidString)
+        do {
+            let json = try JSONEncoder().encode(message)
+            guard let encrypted = Sec.shared.encryptWithSessionKey(json) else {
+                print("sendTask(\(task)): encryption failed")
+                return
+            }
+            // base64 so the server's decrypt_data can STANDARD.decode() it.
+            self.sendData(data: encrypted.base64EncodedData())
+        } catch {
+            print("sendTask(\(task)): encode failed: \(error)")
+        }
+    }
+
     func sendData(data: Data){
         if (!self.connected){
             self.start(ip_address: self.ip_address, port: self.port);

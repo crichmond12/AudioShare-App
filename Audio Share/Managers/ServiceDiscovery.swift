@@ -97,6 +97,37 @@ class ServiceDiscoveryManager: NSObject, NetServiceBrowserDelegate, NetServiceDe
     func connectToService(service: NetService) {
     }
 
+    /// Stop browsing. Safe to call even if discovery never started.
+    func stop() {
+        self.browser?.cancel()
+    }
+
+    /// Wait up to `timeout` seconds for an mDNS-discovered Audio Share device
+    /// that we already hold a Keychain pairing secret for, and return it with
+    /// its serial number. This is what makes QR-free reconnect possible: the
+    /// serial comes from the live TXT record and the secret from the Keychain,
+    /// so no scan is needed. Polls because resolution (addresses + TXT) lands
+    /// asynchronously after each service is found.
+    func awaitPairedService(timeout: TimeInterval) async -> (NetService, String)? {
+        let keychain = KeychainManager()
+        let deadline = Date().addingTimeInterval(timeout)
+        while Date() < deadline {
+            let snapshot = self.services
+            for (_, netService) in snapshot {
+                guard let txtData = netService.txtRecordData() else { continue }
+                let txt = NetService.toDictionary(fromTXTRecord: txtData)
+                guard let serial = txt["serial_number"],
+                      keychain.loadPairingSecret(for: serial) != nil,
+                      let addresses = netService.addresses, !addresses.isEmpty else {
+                    continue
+                }
+                return (netService, serial)
+            }
+            try? await Task.sleep(nanoseconds: 250_000_000) // 0.25s
+        }
+        return nil
+    }
+
     private func getIPAddress(from data: Data) -> String? {
             var storage = sockaddr_storage()
             (data as NSData).getBytes(&storage, length: data.count)

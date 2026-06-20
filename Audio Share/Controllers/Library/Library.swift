@@ -15,32 +15,66 @@ struct Library: View {
     
     }
     @State var needs_to_connect = !LoginManager.shared.isConnectedToDevice;
+    // A DRM-free internet-radio stream the device can fetch+decode directly
+    // (SomaFM Groove Salad). Editable — this is just a convenient default.
+    @State private var streamURL: String = "https://ice1.somafm.com/groovesalad-128-mp3";
+    @State private var reconnecting = false;
+    @State private var statusMessage = "";
     var body: some View {
-        GeometryReader {
-            geometry in
-            Text("Library");
+        VStack(spacing: 20) {
+            Text("Library")
+                .font(.headline)
+
+            VStack(spacing: 10) {
+                TextField("Stream URL", text: $streamURL)
+                    .textFieldStyle(.roundedBorder)
+                    .autocorrectionDisabled(true)
+                    .textInputAutocapitalization(.never)
+                    .keyboardType(.URL)
+
+                HStack(spacing: 12) {
+                    Button("Play") {
+                        ConnectionManager.shared.sendTask(
+                            "play",
+                            data: ["url": streamURL, "zone": "default"]
+                        )
+                    }
+                    .buttonStyle(.borderedProminent)
+                    .disabled(streamURL.isEmpty)
+
+                    Button("Stop") {
+                        ConnectionManager.shared.sendTask("stop", data: ["zone": "default"])
+                    }
+                    .buttonStyle(.bordered)
+                }
+
+                Button(reconnecting ? "Reconnecting…" : "Reconnect") {
+                    reconnecting = true
+                    statusMessage = ""
+                    Task {
+                        let ok = await ConnectionManager.shared.reconnect()
+                        await MainActor.run {
+                            reconnecting = false
+                            statusMessage = ok ? "Reconnected" : "Reconnect failed — is the device on?"
+                        }
+                    }
+                }
+                .buttonStyle(.bordered)
+                .disabled(reconnecting)
+
+                if !statusMessage.isEmpty {
+                    Text(statusMessage)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                }
+            }
+
             Button(action: {
                 SpotifySessionManager.shared.initiateSession();
-                /*lazy var configuration: SPTConfiguration = {
-                    let configuration = SPTConfiguration(clientID: spotifyClientId, redirectURL: redirectUri)
-                    // Set the playURI to a non-nil value so that Spotify plays music after authenticating
-                    // otherwise another app switch will be required
-                    configuration.playURI = ""
-                    // Set these url's to your backend which contains the secret to exchange for an access token
-                    // You can use the provided ruby script spotify_token_swap.rb for testing purposes
-                    configuration.tokenSwapURL = URL(string: "http://localhost:1234/swap")
-                    configuration.tokenRefreshURL = URL(string: "http://localhost:1234/refresh")
-                    return configuration
-                }()
-
-                lazy var sessionManager: SPTSessionManager? = {
-                    let manager = SPTSessionManager(configuration: configuration, delegate: self)
-                    return manager
-                }()*/
-
             }){
                 Text("SPOTIFY")
-                    .frame(width: geometry.size.width, height: 48)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 48)
                     .font(.headline) // Custom font size
                     .foregroundColor(.white) // Text color
                     .background(Color.blue) // Background color
@@ -48,7 +82,9 @@ struct Library: View {
                     .shadow(radius: 10) // Shadow effect
             }
 
+            Spacer()
         }
+        .padding()
         .sheet(isPresented: self.$needs_to_connect){
             DeviceConnect()
         }
