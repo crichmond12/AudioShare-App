@@ -28,8 +28,12 @@ class ConnectionManager{
     }
     
     public static func post(method: String, formData: [String: String]) async -> [String: Any]? {
-        // Build the URL
-        guard let url = URL(string: "http://192.168.68.61:8080/\(method)") else {
+        // Build the URL. Points at the device server's account-auth stub (the
+        // Rust audioshare_device now serves /authenticateUser + /createUser on
+        // 8080; the standalone Go service is gone). This is the Pi's LAN IP —
+        // it's hardcoded because login happens before mDNS device discovery, so
+        // reserve the Pi's DHCP lease if this changes.
+        guard let url = URL(string: "http://192.168.68.68:8080/\(method)") else {
             print("Invalid URL")
             return nil
         }
@@ -78,7 +82,7 @@ class ConnectionManager{
 
     
    /* public static func post(method:String, formData:[String:String]) async -> [String: Any]? {
-        guard let url = URL(string: "http://192.168.68.61:8080/\(method)") else { return nil}
+        guard let url = URL(string: "http://192.168.68.68:8080/\(method)") else { return nil}
 
         // Create the request
         var request = URLRequest(url: url)
